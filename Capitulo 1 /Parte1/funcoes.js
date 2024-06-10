@@ -2,12 +2,12 @@
 function plus1(x){
     return x+1;
 }
-console.log(plus1(3));
+console.log(`Valor: ${plus1(3)}`);
 
 let square = function(x){
     return x*x;
 };
-console.log(square(plus1(3))); // chama duas funções em uma única expressão
+console.log(`square(plus1(3))`); // chama duas funções em uma única expressão
 
 
 // Quando funções recebem as propriedades
@@ -62,3 +62,24 @@ function factorial2(n){
 }
 
 console.log(factorial2(5));
+
+// Define uma função construtora para inicializar um novo objeto Point
+function Point(x,y){
+    this.x = x;
+    this.y = y;
+}
+
+// usa uma função construtora com a palavra-chave "new" para criar instâncias
+
+let p = new Point(1, 1);
+
+//Define métodos para obketos Point atribuindo-os ao objeto
+// prototype associado à função construtora
+
+Point.prototype.r = function(){
+    return Math.sqrt(
+        this.x*this.x +
+        this.y*this.y
+    );
+};
+console.log(p.r().toFixed(3));
